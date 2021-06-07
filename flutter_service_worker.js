@@ -4,29 +4,30 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "827ea55e6969c27f12fb62478948b63f",
-"index.html": "c27cb9320b0cf2dfc4bedbcb5f7f5fc0",
-"/": "c27cb9320b0cf2dfc4bedbcb5f7f5fc0",
-"main.dart.js": "1bf99e858c48cba1d76edcb25b8501e4",
+"index.html": "96028d05e76a6598966f44c2fc78c0ca",
+"/": "96028d05e76a6598966f44c2fc78c0ca",
+"main.dart.js": "2c3ed7b87e4b90fd76e97080dba232e4",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "manifest.json": "bd8f35b4958003533992aa764c952a2e",
-"assets/AssetManifest.json": "07b5a52960b1225dbf47cfc64a7a243f",
-"assets/NOTICES": "a13d24181049532b46034a6440cec9b0",
+"assets/AssetManifest.json": "0e890036747a1d5133b44a1e79b6dac0",
+"assets/NOTICES": "1e5979b3806b6547573f696aabb8d703",
 "assets/FontManifest.json": "36947c416e1151474d8b23db275d0826",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
-"assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
+"assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
 "assets/assets/gmail_black.svg": "e3c80e2b2449d0162c762a2b5961b380",
 "assets/assets/gmail.svg": "deda33aea2bfa9216df4b9abc2d17698",
 "assets/assets/instagram.svg": "fc23b90236f87b11147810f35f4c5293",
 "assets/assets/facebook_black.svg": "422e766543a3850de8db1f049775a1e9",
 "assets/assets/img.jpg": "8e60a0b4c7622d2f627488b85a385fb4",
+"assets/assets/warmac.png": "734962ad17076bf46b02c494a686611d",
 "assets/assets/facebook.svg": "4241a9e49abf7a415e715b95e399182d",
-"assets/assets/A.svg": "e2e975c88851b253d72185529abecac0",
+"assets/assets/A.svg": "aba6165f5411dee712925d11f928f750",
 "assets/assets/linkedin.svg": "bb771fecc80fd18fbebf6328391d3884",
-"assets/assets/linkedin_black.svg": "3c8afea5ee97ad99924808a2ab5fec10",
+"assets/assets/linkedin_black.svg": "e1a35f8bbf387adddedd9b732aba03ab",
 "assets/assets/organic_kreation.png": "8566d98892b2f82528e7fa250cfa7883",
-"assets/assets/instagram_black.svg": "59b0c8cb832538da82cba3147939d41d",
+"assets/assets/instagram_black.svg": "0fad70dc012c2adfe022370582ba2513",
 "assets/assets/fonts/Europa/Europa-Regular.ttf": "23c0fcab84d99da0de762de7e220a6e1",
 "assets/assets/fonts/Libre_Franklin/static/LibreFranklin-Regular.ttf": "88f8f3ec14cacfac8a7266977e569ec5",
 "assets/assets/fonts/Libre_Franklin/static/LibreFranklin-ExtraBold.ttf": "36fb58c48197fda62900a23dbac8db68",
@@ -51,7 +52,7 @@ self.addEventListener("install", (event) => {
   return event.waitUntil(
     caches.open(TEMP).then((cache) => {
       return cache.addAll(
-        CORE.map((value) => new Request(value + '?revision=' + RESOURCES[value], {'cache': 'reload'})));
+        CORE.map((value) => new Request(value, {'cache': 'reload'})));
     })
   );
 });
